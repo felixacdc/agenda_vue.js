@@ -10,6 +10,7 @@
 
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/me.css">
 	<script src="js/vue.js"></script>
 </head>
 <body>
@@ -61,8 +62,8 @@
                                 	class="btn btn-default btn-xs">
 	                                <span class="fa fa-floppy-o"></span>
 	                            </button>
-	                            <button class="btn btn-primary btn-xs">
-	                                <span class="fa fa-check"></span>
+	                            <button class="btn btn-primary btn-xs" @click="tarea.completado = !tarea.completado">
+	                                <span class="fa" :class="{'fa-check': !tarea.completado,'fa-repeat': tarea.completado}"></span>
 	                            </button>
 	                            <button class="btn btn-danger btn-xs">
 	                                <span class="fa fa-remove"></span>
