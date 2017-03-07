@@ -13,13 +13,33 @@
 	<script src="js/vue.js"></script>
 </head>
 <body>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-3"></div>
-			<div class="col-md-3">
-
-			</div>
+	<div id="main">
+		<div class="container">
+			<agenda></agenda>
 		</div>
 	</div>
+
+	<template id="agenda">
+		<div class="row">
+			<div class="col-md-2"></div>
+			<div class="col-md-8">
+				<h2>Agenda App</h2>
+				<!-- Formulario para crear tarea -->
+				<form class="form" @submit.prevent="agregarTarea()">
+	                <div class="input-group">
+	                    <input type="text" class="form-control" v-model="nuevaTarea">
+						<span class="input-group-btn">
+							<button class="btn btn-default" type="submit">
+								<span class="fa fa-plus"></span> Añadir tarea
+							</button>
+						</span>
+	                </div>
+	            </form>
+	            <!-- Fin de formulario para crear tarea -->
+			</div>
+		</div>
+	</template>
+
+	<script src="js/main.js"></script>
 </body>
 </html>
