@@ -36,6 +36,31 @@
 	                </div>
 	            </form>
 	            <!-- Fin de formulario para crear tarea -->
+	            <!-- Listar los eventos -->
+	            <ul class="list-group">
+	                <li v-for="tarea in tareas"
+	                    class="list-group-item clearfix">
+	                    <p class="lead" :class="{completado: tarea.completado}">
+	                        {{ tarea.titulo }}
+	                    </p>
+	                    <input type="text" class="form-control" v-model="tarea.titulo">
+	                    <br>
+	                    <div>
+	                        <span class="pull-right">
+	                            <button class="btn btn-default btn-xs">
+	                                <span class="fa fa-pencil"></span>
+	                            </button>
+	                            <button class="btn btn-primary btn-xs">
+	                                <span class="fa fa-check"></span>
+	                            </button>
+	                            <button class="btn btn-danger btn-xs">
+	                                <span class="fa fa-remove"></span>
+	                            </button>
+	                        </span>
+	                    </div>
+                   </li>
+                </ul>
+	            <!-- Fin de listar los eventos -->
 			</div>
 		</div>
 	</template>

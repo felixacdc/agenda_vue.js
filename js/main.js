@@ -24,7 +24,8 @@ new Vue({
 		    {"titulo": "Ir al gimnasio", "completado": true},
 		    {"titulo": "Limpiar el coche", "completado": false},
 		    {"titulo": "Hacer la compra", "completado": false},
-		    {"titulo": "Aprender VueJs & Firebase", "completado": false}
+		    {"titulo": "Aprender VueJs", "completado": false},
+		    {"titulo": "Hacer la tarea de ingles", "completado": false},
 		]
 	},
 });
