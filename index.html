@@ -15,7 +15,9 @@
 <body>
 	<div id="main">
 		<div class="container">
-			<agenda></agenda>
+			<agenda :tareas="tareas"></agenda>
+			<hr>
+			<pre>{{ $data | json }}</pre>
 		</div>
 	</div>
 
@@ -27,7 +29,7 @@
 				<!-- Formulario para crear tarea -->
 				<form class="form" @submit.prevent="agregarTarea()">
 	                <div class="input-group">
-	                    <input type="text" class="form-control" v-model="nuevaTarea">
+	                    <input type="text" class="form-control" placeholder="Escriba el evento." v-model="nuevaTarea">
 						<span class="input-group-btn">
 							<button class="btn btn-default" type="submit">
 								<span class="fa fa-plus"></span> Añadir tarea
