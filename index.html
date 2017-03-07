@@ -24,6 +24,7 @@
 			<div class="col-md-2"></div>
 			<div class="col-md-8">
 				<h2>Agenda App</h2>
+				<hr>
 				<!-- Formulario para crear tarea -->
 				<form class="form" @submit.prevent="agregarTarea()">
 	                <div class="input-group">
@@ -38,17 +39,27 @@
 	            <!-- Fin de formulario para crear tarea -->
 	            <!-- Listar los eventos -->
 	            <ul class="list-group">
-	                <li v-for="tarea in tareas"
+	                <li v-for="(tarea, index) in tareas"
 	                    class="list-group-item clearfix">
 	                    <p class="lead" :class="{completado: tarea.completado}">
 	                        {{ tarea.titulo }}
 	                    </p>
-	                    <input type="text" class="form-control" v-model="tarea.titulo">
-	                    <br>
+	                    <input type="text" class="form-control" 
+	                    		v-model="tarea.titulo" 
+	                    		v-show="editandoTarea === index" 
+	                    		@blur="editandoTarea = null">
+	                    <br v-show="editandoTarea === index">
 	                    <div>
 	                        <span class="pull-right">
-	                            <button class="btn btn-default btn-xs">
+	                            <button class="btn btn-default btn-xs" 
+	                            	@click="editandoTarea = index"
+	                            	v-show="editandoTarea != index">
 	                                <span class="fa fa-pencil"></span>
+	                            </button>
+	                            <button v-show="editandoTarea === index"
+                                	@click="editandoTarea = null"
+                                	class="btn btn-default btn-xs">
+	                                <span class="fa fa-floppy-o"></span>
 	                            </button>
 	                            <button class="btn btn-primary btn-xs">
 	                                <span class="fa fa-check"></span>

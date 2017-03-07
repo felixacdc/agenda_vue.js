@@ -2,7 +2,8 @@ Vue.component('agenda', {
 	template: '#agenda',
 	data: function() {
 		return {
-			nuevaTarea: null
+			nuevaTarea: null,
+			editandoTarea: null
 		}
 	},
 	props: ['tareas'],
