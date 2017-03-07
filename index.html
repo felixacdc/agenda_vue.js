@@ -65,7 +65,7 @@
 	                            <button class="btn btn-primary btn-xs" @click="tarea.completado = !tarea.completado">
 	                                <span class="fa" :class="{'fa-check': !tarea.completado,'fa-repeat': tarea.completado}"></span>
 	                            </button>
-	                            <button class="btn btn-danger btn-xs">
+	                            <button class="btn btn-danger btn-xs" @click="eliminarTarea(index)">
 	                                <span class="fa fa-remove"></span>
 	                            </button>
 	                        </span>

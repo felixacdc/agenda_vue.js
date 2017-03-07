@@ -13,6 +13,9 @@ Vue.component('agenda', {
                 titulo: this.nuevaTarea, completado: false
             });
             this.nuevaTarea = "";
+		},
+		eliminarTarea: function(indice) {
+			this.tareas.splice(indice, 1);
 		}
 	}
 });
